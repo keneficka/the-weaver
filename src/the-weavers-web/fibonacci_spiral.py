@@ -1,18 +1,23 @@
+# Optimized Fibonacci Spiral Generator
 import turtle
 
+# Set up screen
 screen = turtle.Screen()
 screen.bgcolor("black")
-t = turtle.Turtle()
-t.color("cyan")
-t.speed(0)
+screen.title("Fibonacci Spiral")
 
-def fibonacci(n):
-    if n <= 1:
-        return n
-    return fibonacci(n-1) + fibonacci(n-2)
+# Create turtle
+pen = turtle.Turtle()
+pen.color("cyan")
+pen.speed(0)
+pen.width(2)
 
-for i in range(100):
-    t.circle(fibonacci(i), 90)
-    t.left(90)
+# Fibonacci sequence generation
+a, b = 0, 1
+for _ in range(10):  # Minimal iterations
+    pen.circle(b, 90)  # Draw quarter-circle with radius b
+    a, b = b, a + b
 
-screen.mainloop()
+# Finish up
+pen.hideturtle()
+turtle.done()
