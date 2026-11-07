@@ -1,0 +1,2 @@
+This is the web ecosystem project.
+Ecosystem with scavengers, predators, and nutrients.

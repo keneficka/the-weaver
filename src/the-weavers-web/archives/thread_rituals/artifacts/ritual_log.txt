@@ -1,0 +1,89 @@
+Thread ebony at (400, 160) performs shadow: shadow casts shade
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread ebony at (400, 160) performs darken: darken: void
+Thread crimson at (320, 160) performs seal: seal locks state: lock
+Thread gold at (100, 160) performs weft: weft creates new weave connection
+Thread indigo at (180, 160) performs twist: twist becomes tangled
+Thread silver at (250, 160) performs weft: weft thread snaps
+Thread ebony at (400, 160) performs shadow: shadow lightens
+Thread ebony at (400, 160) performs darken: darken: void
+Thread ebony at (400, 160) performs shadow: shadow casts shade
+Thread ebony at (400, 160) performs darken: darken: deepen
+Thread ebony at (400, 160) performs shadow: shadow casts shade
+Thread crimson at (320, 160) performs bleed: bleed leaves stain
+Thread gold at (100, 160) performs weft: weft creates new weave connection
+Thread gold at (100, 160) performs weft: weft ritual completes normally
+Thread indigo at (180, 160) performs twist: twist forms a knot
+Thread ebony at (400, 160) performs anchor: anchor: float
+Thread gold at (100, 160) performs weft: weft creates new weave connection
+Thread indigo at (180, 160) performs dye: dye thread snaps
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread crimson at (320, 160) performs seal: seal locks state: lock
+Thread ebony at (400, 160) performs anchor: anchor: ground
+Thread crimson at (320, 160) performs bind: bind: sever
+Thread ebony at (400, 160) performs darken: darken: void
+Thread crimson at (320, 160) performs bleed: bleed thread heals
+Thread ebony at (400, 160) performs darken: darken: void
+Thread ebony at (400, 160) performs darken: darken: deepen
+Thread gold at (100, 160) performs warp: warp ritual completes normally
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread ebony at (400, 160) performs anchor: anchor: ground
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread gold at (100, 160) performs warp: warp ritual completes normally
+Thread crimson at (320, 160) performs bleed: bleed leaves stain
+Thread gold at (100, 160) performs warp: warp ritual completes normally
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread ebony at (400, 160) performs shadow: shadow lightens
+Thread ebony at (400, 160) performs darken: darken: void
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread ebony at (400, 160) performs anchor: anchor: float
+Thread ebony at (400, 160) performs darken: darken: deepen
+Thread gold at (100, 160) performs weft: weft ritual completes normally
+Thread ebony at (400, 160) performs shadow: shadow casts shade
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread ebony at (400, 160) performs shadow: shadow casts shade
+Thread ebony at (400, 160) performs anchor: anchor: ground
+Thread crimson at (320, 160) performs bind: bind: sever
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread ebony at (400, 160) performs shadow: shadow casts shade
+Thread ebony at (400, 160) performs shadow: shadow lightens
+Thread ebony at (400, 160) performs darken: darken: void
+Thread ebony at (400, 160) performs shadow: shadow casts shade
+Thread crimson at (320, 160) performs bind: bind: sever
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread crimson at (320, 160) performs bleed: bleed thread heals
+Thread gold at (100, 160) performs gild: gild ritual completes normally
+Thread crimson at (320, 160) performs bind: bind: bond
+Thread ebony at (400, 160) performs darken: darken: void
+Thread ebony at (400, 160) performs darken: darken: void
+Thread crimson at (320, 160) performs bind: bind: bond
+Thread crimson at (320, 160) performs bind: bind: bond
+Thread ebony at (400, 160) performs darken: darken: void
+Thread crimson at (320, 160) performs bleed: bleed thread heals
+Thread ebony at (400, 160) performs anchor: anchor: ground
+Thread crimson at (320, 160) performs bind: bind: sever
+Thread gold at (100, 160) performs gild: gild ritual in progress
+Thread ebony at (400, 160) performs shadow: shadow casts shade
+Thread ebony at (400, 160) performs darken: darken: void
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread crimson at (320, 160) performs bind: bind: sever
+Thread crimson at (320, 160) performs bind: bind: sever
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread crimson at (320, 160) performs bind: bind: sever
+Thread crimson at (320, 160) performs bind: bind: bond
+Thread crimson at (320, 160) performs bind: bind: sever
+Thread crimson at (320, 160) performs seal: seal locks state: lock
+Thread ebony at (400, 160) performs anchor: anchor: float
+Thread gold at (100, 160) performs gild: gild ritual in progress
+Thread ebony at (400, 160) performs shadow: shadow lightens
+Thread ebony at (400, 160) performs anchor: anchor: ground
+Thread crimson at (320, 160) performs bind: bind: bond
+Thread ebony at (400, 160) performs darken: darken: deepen
+Thread gold at (100, 160) performs weft: weft creates new weave connection
+Thread crimson at (320, 160) performs seal: seal locks state: preserve
+Thread crimson at (320, 160) performs bind: bind: bond
+Thread ebony at (400, 160) performs shadow: shadow lightens
+Thread ebony at (400, 160) performs darken: darken: void
+Thread crimson at (320, 160) performs bind: bind: bond
+Thread crimson at (320, 160) performs seal: seal locks state: preserve

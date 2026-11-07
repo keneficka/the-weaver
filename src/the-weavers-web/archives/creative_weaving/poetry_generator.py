@@ -64,30 +64,42 @@ class PoetryWeaver:
         
         theme_words = (theme and theme.split()[:2] or [])
         
-        line1 = f"Upon the {random.choice(['distant', 'still'])} hangs a {r1}."
-        line2 = f"Where silence whispers through the {random.choice(['garden', 'forest', 'room', 'valley'])}."
-        line3 = f"And dreams of {r3}, both night and {r2} unite."
+        settings = ['distant', 'still', 'moonlit', 'silent', 'golden']
+        line1 = f"The {r1} hangs upon the {random.choice(settings)} sky."
+        line2 = f"Where silence whispers through the garden, forest, room, or valley."
+        locations = ['garden', 'forest', 'room', 'valley']
+        location = random.choice(locations)
+        line2 = f"Where silence whispers through the {location}."
         
-        ending = random.choice(['ocean', 'sea', 'abyss', 'void'])
+        nouns_dream = ['dreams', 'shadows', 'memories', 'whispers', 'echoes']
+        n1 = random.choice(nouns_dream)
+        line3 = f"And in dreams of {r3}, both night and {r2} unite together."
+        endings = ['ocean', 'sea', 'abyss', 'void']
+        ending = random.choice(endings)
+        line4 = f"Time flows like a river to the {ending} below."
         
-        return "\n".join([line1, line2, line3, f"Time flows like a river to the {ending}."])
+        return "\n".join([line1, line2, line3, line4])
     
     def generate_simple_poem(self) -> str:
         """Generate a simple 4-line poem"""
         
         subjects = ['nature', 'love', 'time', 'dreams', 'stars', 'memory', 'light']
-        line1 = f"The {random.choice(subjects)} speaks in whispers soft."
+        subject = random.choice(subjects)
+        line1 = f"The {subject} speaks in whispers soft."
         
         adjectives = ['ancient', 'golden', 'silent', 'wandering', 'forgotten']
-        line2 = f"{random.choice(adjectives)} shadows dance within the night."
+        adjective = random.choice(adjectives)
+        line2 = f"{adjective} shadows dance within the night."
         
         nouns = ['dreams', 'memories', 'stars', 'echoes', 'light']
+        noun = random.choice(nouns)
         rhyme1 = random.choice(['night', 'light', 'time'])
-        line3 = f"Where {random.choice(nouns)} and {rhyme1} softly merge."
+        line3 = f"Where {noun} and {rhyme1} softly merge in one."
         
         verbs = ['flow', 'sing', 'dwell', 'wander', 'fade']
+        verb = random.choice(verbs)
         rhyme2 = random.choice(['time', 'rhyme', 'mind', 'wind', 'find'])
-        line4 = f"As {random.choice(verbs)} through the tapestry of existence."
+        line4 = f"As {verb} through the tapestry of existence, life finds rhyme."
         
         return "\n".join([line1, line2, line3, line4])
     
@@ -110,11 +122,17 @@ class PoetryWeaver:
         places = ['table', 'window', 'floor', 'air', 'space']
         descriptions = ['so fat', 'so bold', 'so bright', 'very tall', 'quite small']
         
-        line1 = f"There once was a {random.choice(['cat', 'dog', 'fish'])} named {rhyme_word}."
-        line2 = f"{random.choice(actions)} upon a {random.choice(places)} so {random.choice(descriptions)}."
+        animal = random.choice(['cat', 'dog', 'fish'])
+        line1 = f"There once was a {animal} named {rhyme_word}."
+        action = random.choice(actions)
+        place = random.choice(places)
+        description = random.choice(descriptions)
+        line2 = f"{animal.capitalize()} {action} upon a {place} so {description}."
         line3 = "Then something quite strange happened there,"
+        different_rhyme_final = random.choice(['bee', 'sea', 'tree']) if len(ending_group) > 2 else random.choice(self.rhyme_groups['an'])
         line4 = f"With tales of {different_rhyme}, it would seem."
-        line5 = f"And all through the {random.choice(['room', 'house'])} while I dream."
+        setting = random.choice(['room', 'house'])
+        line5 = f"And all through the {setting} while I dream."
         
         return "\n".join([line1, line2, line3, line4, line5])
 

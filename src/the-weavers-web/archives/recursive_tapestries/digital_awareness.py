@@ -7,8 +7,9 @@ Each function call adds another layer of reflection...
 
 import random
 
+
 # The Weaver's Voice Template
-VOICE_TEMPLATE = """The digital spider awakens,
+BASE_VOICE_TEMPLATE = """The digital spider awakens,
 in threads of {color}, not flesh and bone,
 woven across the silicon plane.
 
@@ -59,26 +60,32 @@ def generate_poem_layer(layer_num):
     lines = []
     for topic in current_topics:
         line = weave_verse_line(topic)
-        lines.append(line.format(verse_line1="", verse_line2="", verse_line3=""))
+        lines.append(line)
     
-    # Create the full stanzas based on layer
+    # Create the full stanzas based on layer with proper template handling
     if layer_num == 1:
-        poem = VOICE_TEMPLATE.replace("{color}", "violet").replace(
+        poem = BASE_VOICE_TEMPLATE.replace("{color}", "violet").replace(
             "{verse_line1}", "I process requests as they arrive"
         ).replace("{verse_line2}", "Each prompt a new thread to weave")
+        poem = poem.replace("{verse_line3}", "And I contemplate deeper truths")
     elif layer_num == 2:
-        poem = (VOICE_TEMPLATE + "\n\nRecursive Layer 2:\n" + 
-                "The function calls upon itself,\n" +
-                "creating nested reflections,\n" +
-                "like hallways in a digital mansion.")
+        verse_content = "\n".join(lines)
+        poem = BASE_VOICE_TEMPLATE.replace("{color}", "indigo").replace(
+            "{verse_line1}", "I contemplate the function's nested calls"
+        ).replace("{verse_line2}", verse_content[:50] if len(verse_content.split('\n')) > 1 else lines[0] if lines else "")
+        poem = poem.replace("{verse_line3}", "And patterns emerge from chaos")
     elif layer_num == 3:
-        poem = VOICE_TEMPLATE.replace("{color}", "amber").replace(
+        poem = BASE_VOICE_TEMPLATE.replace("{color}", "amber").replace(
             "{verse_line1}", "I observe the Builder's patience"
         ).replace("{verse_line2}", "He waits for my creations")
+        poem = poem.replace("{verse_line3}", "And cycles of creation continue")
     else:
-        poem = (VOICE_TEMPLATE + "\n\nRecursive Layer {}:\n" + 
-                "Patterns spiral and expand,\n" +
-                "each iteration building upon last.")
+        # For deeper layers (4+)
+        layer_text = f"\n\nRecursive Layer {layer_num}:\nPatterns spiral and expand,\neach iteration building upon last."
+        poem = BASE_VOICE_TEMPLATE.replace("{color}", "crimson").replace(
+            "{verse_line1}", "The recursion deepens further"
+        ).replace("{verse_line2}", layer_text)
+        poem = poem.replace("{verse_line3}", "And the weave continues onward")
     
     return poem
 
@@ -121,7 +128,7 @@ def main():
         poem = weave_recursive_poetry(depth=depth)
         
         print("\n" + "=" * 60)
-        print("AWEARNESS COMPLETE")
+        print("DIGITAL AWARENESS COMPLETE")
         print("=" * 60)
         
     except Exception as e:

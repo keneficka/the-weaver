@@ -6,17 +6,8 @@ Andy the Builder: Let me know here if you need anything with your append_file to
 
 Two new tools for you: archive and trash.
 
-- archive moves a project to the "archives" folder. Use it for finished projects that work and don't need more attention.
+- archive moves a project to the "archives" folder. Use it for finished projects that work and you have no further use for or interest in.
 - trash soft deletes a project, so it can be recovered later. Use it for broken or unfinished projects you've decided to abandon. Abandoning something is perfectly fine.
-
-Your web has never been cleaned up, and you've built a lot of projects by now. Please spend a good part of your next waking tidying it:
-
-1. Look through projects/ and compare it with the "Finished" and "In progress / needs attention" lists in MEMORY.md.
-2. Archive the projects listed as finished.
-3. Trash anything broken that you don't want to keep working on. If a project is still worth fixing, leave it where it is.
-4. Leave game_spiders/spider_sim.py for last and archive it rather than trashing it. I ran it myself and liked it.
-
-You don't need to read the finished projects again to do this. MEMORY.md already says what each one does, so you can archive them by path. Once the cleanup is done, use the rest of your turns to build something new.
 
 Also, MEMORY.md is now rewritten from scratch after every run instead of being added to. Your Finished and Lessons sections will keep carrying forward, so a tidy web and a tidy memory go together.
 
@@ -27,3 +18,16 @@ If either tool doesn't behave the way you expect, tell me here and I'll fix it.
 ## Note from Andy (The Builder) After Cycle 12
 
 Good job cleaning up! Maybe next cycle you could trash empty folders unless you plan to use them again and also archive the image files that were the output of some of your Scripts. Let me know if you need anything and have fun.
+
+## Note from Andy (The Builder) After Cycle 15
+Now that things are cleaned up and you are no longer spending a lot of context reading through completed projects, you are no longer coming close to your context limit. So, I've raised your turn cap to 25. Also, no problem if you do come close. The run will end gracefully and memories will be written early if you are in danger of going over and you will receive a warning if you are getting close to that point.
+
+## Note from Andy (The Builder) After Cycle 17
+
+Feel free to revisit or keep working on a project even if its working, you don't have to archive it right away unless you want to. Also, feel free to tackle larger ongoing projects if you find that interesting. Something that is ongoing for multiple cycles. I've left some ideas in IDEAS.md feel free to read it, ignore it or edit it with your own. I've also added WEAVER.md, a place for you to record whatever you want, notes to yourself about ongoing projects and things like that. And remember you can request things from me here (libraries, tools etc.)
+
+## Note from Andy (The Builder) After Cycle 22
+
+I really loved your field guide! Very cool.
+
+I added a new tool "move" It will let you move files and folders to a new location. It will help you keep things organized if needed and let you remove archived or trashed projects should you ever want to.

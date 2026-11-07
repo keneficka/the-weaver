@@ -11,7 +11,7 @@ import shutil
 PROTECTED = {"memory.md", "builder.md", "archives", "midden"}
 
 def main():
-    TURN_CAP = 20
+    TURN_CAP = 25
     CONTEXT_CAP = 48000
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
@@ -44,8 +44,8 @@ def main():
                 Keeping Your Web Clean:
 
                 Your web should stay tidy. A cluttered web wastes your limited turns and context.
-                - Archive finished projects: When a project is finished and working, use the archive tool to move it to the "archives" folder. Archived projects are safe and can be retrieved later.
-                - Trash abandoned projects: If a project is broken or unfinished and you decide it is not worth continuing, use the trash tool to soft delete it. Trashed projects are recoverable, and abandoning a project is perfectly acceptable. Do not sink turns into something that is not working out.
+                - Archive finished projects: When you are done with a project and have no further use for it or desire to work on it, use the archive tool to move it to the "archives" folder. Archived projects are safe and can be retrieved later.
+                - Trash abandoned projects: If a project is broken or unfinished and you decide it is not worth continuing, use the trash tool to soft delete it. Trashed projects are recoverable, and abandoning a project is perfectly acceptable. Do not sink turns into something you are no longer interested in pursuing.
                 - Do not re-read finished projects. Your context is limited, and MEMORY.md already tells you what finished projects do. Only open a finished project's files if you are changing or updating it, or if Andy asks about it in BUILDER.md. Do not reread files just to remind yourself what they contain.
 
                 Loop & Termination:
@@ -62,7 +62,7 @@ def main():
         }
     ]
 
-    available_tools = {"trash": trash, "archive": archive, "file_system_navigate_web": file_system_navigate_web, "read_file": read_file, "write_file": write_file, "append_file": append_file, "run_python": run_python, "create_folder": create_folder}
+    available_tools = {"move": move, "trash": trash, "archive": archive, "file_system_navigate_web": file_system_navigate_web, "read_file": read_file, "write_file": write_file, "append_file": append_file, "run_python": run_python, "create_folder": create_folder}
 
     run_summary = {}
     end_reason = f"hit the {TURN_CAP}-turn cap" 
@@ -169,6 +169,7 @@ def main():
     if not user_initiated:
         try:
             generate_memories(run_summary, now, end_reason)
+            generate_summary(run_summary, now, end_reason)
         except Exception as err:
             log(f"Error generating memory: {err}", log_file)
 
@@ -193,10 +194,10 @@ def memory_log(turn_summary, response, log_file, turn):
     return turn_summary
 
 def trim_tools(content: str):
-    if len(content) <= 150:
+    if len(content) <= 750:
         return content
     else:
-        return content[:150]
+        return content[:750]
 
 def trim_result(result: str):
     if result.startswith("Error:"):
@@ -231,6 +232,8 @@ def generate_memories(run_summary, now, end_reason):
         You are the memory keeper for The Weaver, an autonomous coding agent that wakes up periodically, works in a sandbox folder, and then sleeps. The Weaver has no memory between runs except the MEMORY.md file. After each run, you rewrite MEMORY.md in full so the next waking Weaver knows exactly where things stand.
 
         Your output REPLACES the existing MEMORY.md. Anything you leave out is deleted permanently, so carry forward everything still useful.
+
+        ## New section added for multi-cycle ongoing projects with no fixed "Finished" state
 
         ## Rules
         1. Only record what is shown in the existing memory or the run log. Never guess, infer, or fill in gaps. If neither shows that something worked, do not say it worked.
@@ -320,9 +323,97 @@ def generate_memories(run_summary, now, end_reason):
 
     write_file("MEMORY.md", response.message.content)
 
+def generate_summary(run_summary, now, end_reason):
+    
+    run_summary_str = ""
+    for value in run_summary.values():
+        run_summary_str += value
+
+    
+
+    memory_prompt = f"""
+        You are the observer. You are reading the log of one cycle of an autonomous
+        agent. Write a summary for a human reader who was not present.
+
+        Use this format:
+
+        Narrative summary: <A narrative summary of the run, describe what happened, what the agent was thinking and saying, what it worked on and anything else of interest. Keep it concise and easy to read but make sure to cover anything important>
+        Projects: <A list of projects and associated files the agent worked on. Highlight anything interesting or ambitious>
+        Requests and messages: <Any messages or request left by the agent for the builder in BUILDER.md>
+        NOTES TO ITSELF: <anything it wrote down for later, quoted exactly>
+        ENDED: <how the cycle ended: ran out of turns, stopped on its own, or error>
+
+        ## End reason of last run
+        {end_reason}
+
+        # Log of the run that just finished
+        {run_summary_str}
+
+        Now write the summary. There is no user present, so do not ask clarifying questions. Output only the summary.
+    """
+
+    messages = [
+        {
+            'role':'system',
+            'content': memory_prompt
+        },
+        {
+            'role':'user',
+            'content':'Write the summary now.'
+        }
+    ]
+    
+
+    response: ChatResponse = chat(
+        model='qwen3.5:9b',
+        messages=messages,
+        options={
+            "num_ctx": 80000,
+            "temperature": 0.2,
+        } 
+    )
+    memories = f"observer-{now}"
+    createLog(openingLine="Observer Run Summary", filename=memories)
+    log(response.message.content, filename=memories)
+
+
 # --- Helper Functions ---
 
 # --- Agent Tools ---
+def move(source_path: str, destination_path: str):
+    '''
+    Move a file or directory, to another directory. Used to keep your web clean and organized!
+
+    Args:
+        source_path: Path to the file or folder you want to move, relative to the
+            root of the web. Nested paths work, e.g. 'weave/threads'. 
+            Do not use absolute paths.
+        destination_path: Path to the folder you want to move to, relative to the
+            root of the web. Nested paths work, e.g. 'weave/threads'. 
+            Do not use absolute paths.
+
+    Returns:
+        A succes or error message string.
+
+    Notes:
+        Use this tool to keep things organized or remove things from the archives and the midden.
+    '''
+    if is_protected(source_path):
+        return f"Error: {source_path} is a protected file or dir"
+    try:
+        source = resolve_path(source_path)
+        if source.startswith("Error"):
+            return source
+        destination = resolve_path(destination_path)
+        if destination.startswith("Error"):
+            return destination
+        
+        os.makedirs(destination, exist_ok=True)
+        shutil.move(source, destination)
+        return "Success: Moved to the destination"
+    except Exception as err:
+        return f"Error: {err}"
+    
 def archive(sub_path: str):
     '''
     Move a file or directory to the archives, a folder at the top level of the web. Used to keep your web clean and organized!

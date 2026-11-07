@@ -1,0 +1,103 @@
+{
+  "threads": [
+    {
+      "x": 320,
+      "y": 160,
+      "color_key": "crimson",
+      "props": {
+        "color": "#DC143C",
+        "weight": 1.2,
+        "strength": 1.8,
+        "rituals": [
+          "bind",
+          "seal",
+          "bleed"
+        ]
+      },
+      "tension": 0.5,
+      "direction": "horizontal",
+      "connections": [],
+      "age": 19
+    },
+    {
+      "x": 400,
+      "y": 160,
+      "color_key": "ebony",
+      "props": {
+        "color": "#1A1A1A",
+        "weight": 1.6,
+        "strength": 2.5,
+        "rituals": [
+          "anchor",
+          "shadow",
+          "darken"
+        ]
+      },
+      "tension": 0.5,
+      "direction": "horizontal",
+      "connections": [],
+      "age": 16
+    },
+    {
+      "x": 100,
+      "y": 160,
+      "color_key": "gold",
+      "props": {
+        "color": "#FFD700",
+        "weight": 1.5,
+        "strength": 2.0,
+        "rituals": [
+          "warp",
+          "weft",
+          "gild"
+        ]
+      },
+      "tension": 0.15000000000000013,
+      "direction": "horizontal",
+      "connections": [],
+      "age": 12
+    },
+    {
+      "x": 320,
+      "y": 160,
+      "color_key": "crimson",
+      "props": {
+        "color": "#DC143C",
+        "weight": 1.2,
+        "strength": 1.8,
+        "rituals": [
+          "bind",
+          "seal",
+          "bleed"
+        ]
+      },
+      "tension": 0.5,
+      "direction": "horizontal",
+      "connections": [],
+      "age": 18
+    },
+    {
+      "x": 400,
+      "y": 160,
+      "color_key": "ebony",
+      "props": {
+        "color": "#1A1A1A",
+        "weight": 1.6,
+        "strength": 2.5,
+        "rituals": [
+          "anchor",
+          "shadow",
+          "darken"
+        ]
+      },
+      "tension": 0.5,
+      "direction": "horizontal",
+      "connections": [],
+      "age": 20
+    }
+  ],
+  "ritual_log": [],
+  "patterns_found": [],
+  "cycles_completed": 0,
+  "generations": 0
+}

@@ -1,0 +1,35 @@
+# Knot Garden - Level Scenarios
+
+These scenario files demonstrate the game through progressive challenges.
+
+## Scenario 1: First Bloom (Tutorial)
+- **Starting state**: red:1, blue:1, green:1
+- **Goal**: Create sunrise pattern (red:3)
+- **Moves available**: 5
+- **Expected score**: +5 for completion
+
+## Scenario 2: Evening Light  
+- **Starting state**: red:2, blue:0, purple:1
+- **Goal**: Form twilight arrangement (purple:blue ratio 1:2)
+- **Moves available**: 7
+- **Expected score**: +5 for completion
+
+## Scenario 3: Golden Hour
+- **Starting state**: gold:0, amber:1
+- **Goal**: Create noon pattern (gold:1)
+- **Moves available**: 4
+- **Expected score**: +5 for completion
+
+## Scenario 4: Morning Mist
+- **Starting state**: gray:0, white:2
+- **Goal**: Form mist configuration (gray:5)
+- **Moves available**: 8
+- **Trap to avoid**: Don't use too many white segments (>3)
+
+## Scenario 5: Sunset Gradient
+- **Starting state**: orange:2, red:1
+- **Goal**: Create sunset gradient (orange:4, red:2)
+- **Moves available**: 6
+- **Expected score**: +5 for completion
+
+Run these scenarios through the game to test progression and difficulty balance.

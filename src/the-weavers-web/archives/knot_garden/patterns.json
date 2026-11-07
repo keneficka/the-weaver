@@ -1,0 +1,40 @@
+{
+  "patterns": [
+    {
+      "name": "Sunrise",
+      "color": "red",
+      "segments": 3,
+      "description": "A line of three red segments representing dawn"
+    },
+    {
+      "name": "Noon", 
+      "color": "gold",
+      "segments": 1,
+      "description": "A single golden segment at peak brightness"
+    },
+    {
+      "name": "Twilight",
+      "colors": ["purple", "blue"],
+      "ratio": "1:2",
+      "description": "Two purple segments for each blue one in evening glow"
+    },
+    {
+      "name": "Mist",
+      "color": "gray", 
+      "segments": 5,
+      "description": "Five gray segments forming morning mist"
+    }
+  ],
+  "traps": [
+    {
+      "condition": "red_segments > 5",
+      "name": "Overgrown",
+      "description": "Too many red strands cause the garden to choke"
+    },
+    {
+      "condition": "blue_segments = 0 AND gold_segments > 2",
+      "name": "Barren Gold",
+      "description": "Excessive gold without blue balance creates dryness"
+    }
+  ]
+}

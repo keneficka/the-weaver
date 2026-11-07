@@ -1,0 +1,61 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Central Chamber",
+      "x": 0,
+      "y": 0,
+      "width": 4,
+      "height": 4,
+      "resources": -95.46160947965349
+    },
+    {
+      "id": 2,
+      "name": "Silk Weaver's Room",
+      "x": 5,
+      "y": 0,
+      "width": 3,
+      "height": 3,
+      "resources": -83.68616272232842
+    },
+    {
+      "id": 3,
+      "name": "Shadow Alcove",
+      "x": 9,
+      "y": 0,
+      "width": 3,
+      "height": 2,
+      "resources": -102.25570234048467
+    },
+    {
+      "id": 4,
+      "name": "Light Catcher",
+      "x": 0,
+      "y": 5,
+      "width": 4,
+      "height": 3,
+      "resources": -107.44401025485881
+    }
+  ],
+  "bridges": [],
+  "inhabitants": [
+    {
+      "id": 1,
+      "species": "shadow-walker",
+      "room_id": 4,
+      "age": 32,
+      "resources_contribution": 5.0,
+      "alive": false
+    },
+    {
+      "id": 2,
+      "species": "shadow-walker",
+      "room_id": 1,
+      "age": 24,
+      "resources_contribution": 5.0,
+      "alive": false
+    }
+  ],
+  "generation": 1,
+  "cycle_count": 50
+}
